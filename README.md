@@ -9,7 +9,7 @@ Desenvolvido por <b>Jose de Barros Campelo Neto</b> <br />
 
 ## API hospedada na AWS
 
-    http://18.231.246.233/cms/public/
+    http://18.231.246.233/cms/public
 
 Utilizar end-points disponíveis nas seções <b>Autenticação</b> e <b>Requisições</b>
 
