@@ -52,7 +52,7 @@ A url da aplicação será
     http://localhost:8000
     
 
-05 A aplicação possui proteção de rotas, então é necessário realizar o login com as credencias:
+05 A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login:
 
     + Request (application/json)
     POST {url-da-aplicacao}/api/login
