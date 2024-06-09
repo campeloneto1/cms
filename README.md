@@ -8,11 +8,11 @@ Api criada em <a href="https://laravel.com" target="_blank">Laravel</a> para o d
 
 Para configurar o ambiente serão necessários alguns passos:
 
-Requisitos para utilização:
-    + Servidor Apache
-    + MySql 
-    + PHP 8.1
-    + Laravel 10
+Requisitos para utilização: <br />
+    + Servidor Apache <br />
+    + MySql  <br />
+    + PHP 8.1 <br />
+    + Laravel 10 
 
 01 Clone o repositório no seu ambiente de desenvolvimento
 
