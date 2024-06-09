@@ -1,6 +1,6 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-## API CMS
+# API CMS
 
 Api criada em <a href="https://laravel.com" target="_blank">Laravel</aL para o desafio Tech Plantão Ativo, 
 
@@ -9,10 +9,10 @@ Api criada em <a href="https://laravel.com" target="_blank">Laravel</aL para o d
 Para configurar o ambiente serão necessários alguns passos:
 
 Requisitos para utilização:
-    . Servidor Apache
-    . MySql 
-    . PHP 8.1
-    . Laravel 10
+    * Servidor Apache
+    * MySql 
+    * PHP 8.1
+    * Laravel 10
 
 01 Clone o repositório no seu ambiente de desenvolvimento
 
