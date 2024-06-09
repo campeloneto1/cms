@@ -25,7 +25,6 @@ Requisitos para utilização: <br />
 
     cd cmd/
     composer install
-    php artisan key:generate
 
 03 Altere o nome do arquivo .env.example para .env e informe os seguintes dados referente a conexão com o MySql:
 
@@ -37,6 +36,7 @@ Requisitos para utilização: <br />
 
 04 Abra o terminal na pasta da aplicação e execute os seguintes comandos:
 
+    php artisan key:generate
     php artisan migrate:fresh --seed
     php artisan passport:install
 
