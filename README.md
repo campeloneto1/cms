@@ -20,7 +20,9 @@ Para configurar o ambiente serão necessários alguns passos:
 
 01 Clone o repositório no seu ambiente de desenvolvimento
 
+    ```
     git clone https://github.com/campeloneto1/cms.git
+    ```
 
 02 Execute os comandos:
 
@@ -64,7 +66,7 @@ A url da aplicação será
     
 ## Autenticação
 
-A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login. <br />
+A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login. <br /><br />
 Estão diponíveis três usuários: <br /><br />
     cpf: 11111111111, senha: 123456 <br />
     cpf: 22222222222, senha: 123456 <br />
