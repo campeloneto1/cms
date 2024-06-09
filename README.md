@@ -62,9 +62,9 @@ A url da aplicação será
     http://localhost:8000
 
     
-## Requisições
+## Autenticação
 
-01 A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login. <br />
+A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login. <br />
 Estão diponíveis três usuários: <br /><br />
     cpf: 11111111111, senha: 123456 <br />
     cpf: 22222222222, senha: 123456 <br />
@@ -92,10 +92,11 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         }
     }
 
-02 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
+A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
 
-03 Foram criados end-points nas rotas <br />
-  03.1 - Retorna todos os postos
+## Requisições
+
+### GET /api/posts
     
     + Request
     HEADER Authorization: Bearer {token}
