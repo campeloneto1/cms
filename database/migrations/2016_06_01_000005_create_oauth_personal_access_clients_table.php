@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('title', 250);
-            $table->string('author', 100);
-            $table->text('content');
-            $table->jsonb('tags')->nullable();
-            //$table->timestamps();
+        Schema::create('oauth_personal_access_clients', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('client_id');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('oauth_personal_access_clients');
     }
 };

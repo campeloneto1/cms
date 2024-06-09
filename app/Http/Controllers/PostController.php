@@ -10,9 +10,15 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Post::orderBy('id')->get();
+        if($request->tag){
+            return Post::whereJsonContains('tags', $request->tag)->orderBy('id')->get();
+        }else{
+            return Post::orderBy('id')->get();
+        }
+        
+        
     }
 
     /**
@@ -20,12 +26,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $columns = request(['title', 'author', 'content', 'tags']);
         $data = new Post();
 
-        $data->title = $request->title;
-        $data->author = $request->author;
-        $data->content = $request->content;
-        $data->tags = $request->tags; 
+        $data->title = $columns['title'];
+        $data->author = $columns['author'];
+        $data->content = $columns['content'];
+        $data->tags = $columns['tags']; 
 
         $data->save();
 
@@ -43,15 +50,16 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-
     public function update(Request $request, Post $post)
     {
-         $post->title = $request->title;
-        $post->author = $request->author;
-        $post->content = $request->content;
-        $post->tags = $request->tags; 
+        $columns = request(['title', 'author', 'content', 'tags']);
+        
+        $post->title = $columns['title'];
+        $post->author = $columns['author'];
+        $post->content = $columns['content'];
+        $post->tags = $columns['tags']; 
 
-       $post->save();
+        $post->save();
 
         return response()->json($post, 200);
     }
@@ -62,7 +70,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         if($post->delete()){
-            return response()->json($post, 204);
+            return response('', 204);
         }
     }
 }
