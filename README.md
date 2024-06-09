@@ -28,7 +28,7 @@ Requisitos para utilização: <br />
 
 03 Altere o nome do arquivo .env.example para .env e informe os seguintes dados referente a conexão com o MySql:
 
-    DB_HOST=127.0.0.1      #endereço do bd
+    DB_HOST=127.0.0.1      #endereço IP do bd
     DB_PORT=3306           #porta utilizada pelo bd
     DB_DATABASE=laravel    #nome do banco de dados
     DB_USERNAME=root       #usuário com permições para alterações no banco informado
