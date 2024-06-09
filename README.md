@@ -86,9 +86,6 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
             "id": 1,
             "nome": "Usuario Teste",
             "cpf": "11111111111",
-            "email_verified_at": null,
-            "created_at": null,
-            "updated_at": null
         }
     }
 
