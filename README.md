@@ -2,7 +2,8 @@
 
 # API CMS
 
-Api criada em <a href="https://laravel.com" target="_blank">Laravel</a> para o desafio Tech Plantão Ativo, 
+Api criada em <a href="https://laravel.com" target="_blank">Laravel</a> para o desafio Tech Plantão Ativo.
+Desenvolvido por Jose de Barros Campelo Neto
 
 ## Configuração de ambiente
 
