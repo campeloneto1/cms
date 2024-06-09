@@ -26,7 +26,7 @@ Requisitos para utilização: <br />
     cd cmd/
     composer install
 
-03 Altere o nome do arquivo .env.example para .env e informe os seguintes dados:
+03 Altere o nome do arquivo .env.example para .env e informe os seguintes dados referente a conexão com o MySql:
 
     DB_HOST=127.0.0.1      #endereço do bd
     DB_PORT=3306           #porta utilizada pelo bd
@@ -39,7 +39,7 @@ Requisitos para utilização: <br />
     php artisan migrate:fresh --seed
     php artisan passport:install
 
-Se a aplicação for hospedada em um servidor apache (No Ubuntu na pasta '/var/www/html'), basta utilizar a seguinte url com os end-points informados no item 05
+Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte url com os end-points informados no item 05
 
     http://localhost/cms/public
 
