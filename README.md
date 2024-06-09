@@ -68,7 +68,7 @@ A url da aplicação será
  
     GET {url-da-aplicacao}/api/posts?tag={tag}
 
-  07.3 Para utilização de uma URL mais amigável, basta colocar uma "/" após o endpoint posts e informar o nome da tag que deseja filtrar
+  07.3 Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da tag que deseja filtrar
  
     GET {url-da-aplicacao}/api/posts/{tag}
 
