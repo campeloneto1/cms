@@ -1,67 +1,64 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## API CMS
 
-## About Laravel
+Api criada em Laravel para o desafio Tech Plantão Ativo, 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Configuração de ambiente
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Para configurar o ambiente serão necessários alguns passos:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+01 Clone o repositório no seu ambiente de desenvolvimento
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    git clone https://github.com/campeloneto1/cms.git
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+02 Execute o comando:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    composer install
 
-## Laravel Sponsors
+03 Altere o nome do arquivo .env.example para .env e informe os seguintes dados:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD=
 
-### Premium Partners
+04 Abra o terminal na pasta da aplicação e execute os seguintes comandos:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    php artisan migrate:fresh --seed
+    php artisan passport:install
 
-## Contributing
+05 A aplicação possui proteção de rotas, então é necessário realizar o login com as credencias:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    {
+        'cpf': '11111111111',
+        'password': '123456'
+    }
 
-## Code of Conduct
+ 06 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+ 07 Foram criados end-points nas rotas
 
-## Security Vulnerabilities
+     GET http://localhost/cms/public/api/posts -> retorna todos os postos
+     GET http://localhost/cms/public/api/posts?tag={tag} -> retorna todos os postos que possuam a tag node
+     GET http://localhost/cms/public/api/posts/{tag} -> Para utilização de uma URL mais amigável, basta colocar uma "/" após o endpoint posts e informar o nome da tag que deseja filtrar
+     POST http://localhost/cms/public/api/posts -> cadastra um novo post, exemplo de informações:
+         {
+            "title": "hotel",
+            "author": "Jett Hilpert",
+            "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
+            "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
+        }
+      PUT http://localhost/cms/public/api/posts/{id} -> altera as informções do post com id informado no parâmetro passado na url
+          {
+            "title": "hotel",
+            "author": "Jett Hilpert",
+            "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
+            "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
+        }
+      DELETE http://localhost/cms/public/api/posts/{id} -> exclui o post referente ao id informado como parâmetro da url
+    
+     
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# cms
