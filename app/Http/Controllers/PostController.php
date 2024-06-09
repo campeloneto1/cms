@@ -26,13 +26,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $columns = request(['title', 'author', 'content', 'tags']);
         $data = new Post();
 
-        $data->title = $columns['title'];
-        $data->author = $columns['author'];
-        $data->content = $columns['content'];
-        $data->tags = $columns['tags']; 
+        $data->title = $request->input('title');
+        $data->author = $request->input('author');
+        $data->content = $request->input('content');
+        $data->tags = $request->input('tags'); 
 
         $data->save();
 
@@ -52,12 +51,21 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $columns = request(['title', 'author', 'content', 'tags']);
-        
-        $post->title = $columns['title'];
-        $post->author = $columns['author'];
-        $post->content = $columns['content'];
-        $post->tags = $columns['tags']; 
+        if($request->input('title')){
+            $post->title = $request->input('title');
+        }
+
+        if($request->input('author')){
+            $post->author = $request->input('author');
+        }
+
+        if($request->input('content')){
+            $post->content = $request->input('content');
+        }
+
+        if($request->input('tags')){
+            $post->tags = $request->input('tags');
+        }
 
         $post->save();
 

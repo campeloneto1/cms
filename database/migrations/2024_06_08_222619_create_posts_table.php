@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('author', 100);
             $table->text('content');
             $table->jsonb('tags')->nullable();
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 
