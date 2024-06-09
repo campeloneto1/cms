@@ -30,8 +30,22 @@ Para configurar o ambiente serão necessários alguns passos:
     php artisan migrate:fresh --seed
     php artisan passport:install
 
+Se a aplicação for hospedada em um servidor apache o comando a seguir não precisa ser executado, bastando na requisição informar a url da aplicação
+
+    http://localhost/cms/public
+
+Caso não tenha um servidor apache, execute o comando a seguir
+    
+    php artisan serve
+
+A url da aplicação será
+    
+    http://localhost:8000
+    
+
 05 A aplicação possui proteção de rotas, então é necessário realizar o login com as credencias:
 
+    POST {url-da-aplicacao}/api/login
     {
         'cpf': '11111111111',
         'password': '123456'
@@ -41,24 +55,41 @@ Para configurar o ambiente serão necessários alguns passos:
 
  07 Foram criados end-points nas rotas
 
-     GET http://localhost/cms/public/api/posts -> retorna todos os postos
-     GET http://localhost/cms/public/api/posts?tag={tag} -> retorna todos os postos que possuam a tag node
-     GET http://localhost/cms/public/api/posts/{tag} -> Para utilização de uma URL mais amigável, basta colocar uma "/" após o endpoint posts e informar o nome da tag que deseja filtrar
-     POST http://localhost/cms/public/api/posts -> cadastra um novo post, exemplo de informações:
+ 07.1 - Retorna todos os postos
+
+     GET {url-da-aplicacao}/api/posts
+
+ 07.2 - Retorna todos os posts que possuam a tag passada na URL
+ 
+     GET {url-da-aplicacao}/api/posts?tag={tag}
+
+ 07.3 Para utilização de uma URL mais amigável, basta colocar uma "/" após o endpoint posts e informar o nome da tag que deseja filtrar
+ 
+     GET {url-da-aplicacao}/api/posts/{tag}
+
+07.4 Cadastra um novo post, exemplo de informações:
+     
+     POST {url-da-aplicacao}/api/posts
          {
             "title": "hotel",
             "author": "Jett Hilpert",
             "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
             "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
         }
-      PUT http://localhost/cms/public/api/posts/{id} -> altera as informções do post com id informado no parâmetro passado na url
+
+07.5 Altera as informções do post com id informado no parâmetro passado na url
+        
+      PUT {url-da-aplicacao}/api/posts/{id}
           {
             "title": "hotel",
             "author": "Jett Hilpert",
             "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
             "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
         }
-      DELETE http://localhost/cms/public/api/posts/{id} -> exclui o post referente ao id informado como parâmetro da url
+
+  07.6  Exclui o post referente ao id informado como parâmetro da url
+  
+      DELETE {url-da-aplicacao}/api/posts/{id}
     
      
 
