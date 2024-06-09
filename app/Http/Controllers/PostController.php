@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         if($request->tag){
-            return Post::whereJsonContains('tags', $request->tag)->orderBy('id')->get();
+            return Post::whereJsonContains('tags', $request->input('tag'))->orderBy('id')->get();
         }else{
             return Post::orderBy('id')->get();
         }
