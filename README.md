@@ -25,6 +25,7 @@ Requisitos para utilização: <br />
 
     cd cmd/
     composer install
+    php artisan key:generate
 
 03 Altere o nome do arquivo .env.example para .env e informe os seguintes dados referente a conexão com o MySql:
 
