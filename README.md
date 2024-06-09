@@ -32,7 +32,7 @@ Requisitos para utilização: <br />
     #informe a senha do usuário root
     CREATE DATABASE cms;
     CREATE USER 'cms'@'localhost' IDENTIFIED BY '123456'; 
-    GRANT ALL PRIVILEGES ON cms. * TO 'cms'@'localhost'; 
+    GRANT ALL PRIVILEGES ON cms.* TO 'cms'@'localhost'; 
 
 04 Altere o nome do arquivo .env.example para .env e informe os seguintes dados referente a conexão com o MySql:
 
