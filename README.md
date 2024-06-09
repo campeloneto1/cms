@@ -77,6 +77,7 @@ A url da aplicação será
   07.1 - Retorna todos os postos
     
     + Request
+    HEADER Authorization: Bearer {token}
     GET {url-da-aplicacao}/api/posts
 
     + Response 200 (application/json)
@@ -129,6 +130,7 @@ A url da aplicação será
   07.2 - Retorna todos os posts que possuam a tag passada na URL
 
     + Request
+    HEADER Authorization: Bearer {token}
     GET {url-da-aplicacao}/api/posts?tag={tag}
 
     + Response 200 (application/json)
@@ -151,6 +153,7 @@ A url da aplicação será
   07.3 Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da tag que deseja filtrar
 
     + Request
+    HEADER Authorization: Bearer {token}
     GET {url-da-aplicacao}/api/posts/{tag}
 
      + Response 200 (application/json)
@@ -174,6 +177,7 @@ A url da aplicação será
   07.4 Cadastrar um novo post:
      
      + Request (application/json)
+     HEADER Authorization: Bearer {token}
      POST {url-da-aplicacao}/api/posts
      {
         "title": "hotel",
@@ -202,6 +206,7 @@ A url da aplicação será
   07.5 Altera as informções do post com {id} informado no parâmetro passado na url, na requisição pode ser passados todos os parametros ou apenas os que deseja alterar
         
     + Request (application/json)
+    HEADER Authorization: Bearer {token}
     PUT {url-da-aplicacao}/api/posts/{id}
     {
         "title": "hotel",
@@ -234,6 +239,7 @@ A url da aplicação será
   07.6  Exclui o post referente ao id informado como parâmetro da url
 
     + Request
+    HEADER Authorization: Bearer {token}
     DELETE {url-da-aplicacao}/api/posts/{id}
     
     + Response 204
