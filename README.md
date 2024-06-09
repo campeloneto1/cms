@@ -92,7 +92,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         }
     }
 
-A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
+A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo <b>Authorization Bearer Token</b>
 
 ## Requisições
 
