@@ -14,7 +14,6 @@ Requisitos para utilização:
     . PHP 8.1
     . Laravel 10
 
-
 01 Clone o repositório no seu ambiente de desenvolvimento
 
     git clone https://github.com/campeloneto1/cms.git
@@ -58,23 +57,22 @@ A url da aplicação será
         'password': '123456'
     }
 
- 06 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
+06 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
 
- 07 Foram criados end-points nas rotas
+07 Foram criados end-points nas rotas
+  07.1 - Retorna todos os postos
 
- 07.1 - Retorna todos os postos
+    GET {url-da-aplicacao}/api/posts
 
-     GET {url-da-aplicacao}/api/posts
-
- 07.2 - Retorna todos os posts que possuam a tag passada na URL
+  07.2 - Retorna todos os posts que possuam a tag passada na URL
  
-     GET {url-da-aplicacao}/api/posts?tag={tag}
+    GET {url-da-aplicacao}/api/posts?tag={tag}
 
- 07.3 Para utilização de uma URL mais amigável, basta colocar uma "/" após o endpoint posts e informar o nome da tag que deseja filtrar
+  07.3 Para utilização de uma URL mais amigável, basta colocar uma "/" após o endpoint posts e informar o nome da tag que deseja filtrar
  
      GET {url-da-aplicacao}/api/posts/{tag}
 
-07.4 Cadastra um novo post, exemplo de informações:
+  07.4 Cadastra um novo post, exemplo de informações:
      
      POST {url-da-aplicacao}/api/posts
          {
@@ -84,7 +82,7 @@ A url da aplicação será
             "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
         }
 
-07.5 Altera as informções do post com id informado no parâmetro passado na url
+  07.5 Altera as informções do post com id informado no parâmetro passado na url
         
       PUT {url-da-aplicacao}/api/posts/{id}
           {
