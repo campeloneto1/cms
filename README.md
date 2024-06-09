@@ -86,7 +86,7 @@ Observação 01: Sempre que realizer login com um usuário, todas as outras sess
 
 Observação 02: Foi estabelecido um limite de 5 requisições por minuto no end-point /api/login, para evitar ataques de força bruta.   
 
-     + Attributes
+    + Attributes
          + cpf (string, required)
          + password (string, required)
     
@@ -114,7 +114,7 @@ A API irá retornar um token a ser utilizado nas requisições para os demais en
 ### GET /api/posts
 Retorna todos os posts.
 
-     + Headers
+    + Headers
          Authorization: Bearer {token}
     
     + Request
@@ -170,7 +170,7 @@ Retorna todos os posts.
   ### GET /api/posts?tag=planning 
   Retorna todos os posts que possuam a {tag} passada na URL, no exemplo acima, o nome da {tag} é 'planning'.
 
-     + Headers
+    + Headers
          Authorization: Bearer {token}
 
     + Request
@@ -197,13 +197,13 @@ Retorna todos os posts.
   Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da {tag} que deseja filtrar. <br />
   Retorna todos os posts que possuam a {tag} passada na URL, no exemplo acima, o nome da {tag} é 'writing'.
 
-     + Headers
+    + Headers
          Authorization: Bearer {token}
 
     + Request
     GET {url-da-aplicacao}/api/posts/{tag}
 
-     + Response 200 (application/json)
+    + Response 200 (application/json)
     [
         {
             "id": 1,
@@ -227,15 +227,15 @@ Retorna todos os posts.
     + Headers
          Authorization: Bearer {token}
          
-     + Attributes
+    + Attributes
          + title (string, required)
          + author (string, required)
          + content (string, required)
          + tags (array, required)
      
-     + Request (application/json)
-     POST {url-da-aplicacao}/api/posts
-     {
+    + Request (application/json)
+    POST {url-da-aplicacao}/api/posts
+    {
         "title": "hotel",
         "author": "Jett Hilpert",
         "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
@@ -267,7 +267,7 @@ Retorna todos os posts.
     + Headers
          Authorization: Bearer {token}
 
-     + Attributes
+    + Attributes
          + title (string, optional)
          + author (string, optional)
          + content (string, optional)
