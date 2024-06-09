@@ -60,18 +60,103 @@ A url da aplicação será
 
 06 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
 
-07 Foram criados end-points nas rotas
+07 Foram criados end-points nas rotas <br />
   07.1 - Retorna todos os postos
-
+    
+    + Request
     GET {url-da-aplicacao}/api/posts
 
+    + Response 200 (application/json)
+    [
+        {
+            "id": 1,
+            "title": "hotel3",
+            "author": "Jett Hilpert2",
+            "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
+            "tags": [
+                "node",
+                "organizing",
+                "webapps",
+                "domain",
+                "developer",
+                "https",
+                "proxy"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "json-server",
+            "author": "Eldora Schinner",
+            "content": "Laudantium illum modi tenetur possimus natus. Sed tempora molestiae fugiat id dolor rem ea aliquam. Ipsam quibusdam quam consequuntur. Quis aliquid non enim voluptatem nobis. Error nostrum assumenda ullam error eveniet. Ut molestiae sit non suscipit.\nQui et eveniet vel. Tenetur nobis alias dicta est aut quas itaque non. Omnis iusto architecto commodi molestiae est sit vel modi. Necessitatibus voluptate accusamus.",
+            "tags": [
+                "api",
+                "json",
+                "schema",
+                "node",
+                "github",
+                "rest"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "fastify",
+            "author": "Delpha Balistreri",
+            "content": "Eos corrupti qui omnis error repellendus commodi praesentium necessitatibus alias. Omnis omnis in. Labore aut ea minus cumque molestias aut autem ullam. Consectetur et labore odio quae eos eligendi sit. Quam placeat repellendus.\n Odio nisi dolores dolorem ea. Qui dicta nulla eos quidem iusto. Voluptatibus qui est accusamus sint perferendis est quae recusandae. Qui repudiandae cupiditate fugiat est.",
+            "tags": [
+                "web",
+                "framework",
+                "node",
+                "http2",
+                "https",
+                "localhost"
+            ]
+        }
+    ]
+
   07.2 - Retorna todos os posts que possuam a tag passada na URL
- 
+
+    + Request
     GET {url-da-aplicacao}/api/posts?tag={tag}
 
+    + Response 200 (application/json)
+    [
+        {
+            "id": 1,
+            "title": "Notion",
+            "author": "Marcia Thiel",
+            "content": "Sed soluta nemo et consectetur reprehenderit ea reprehenderit sit. Aut voluptate sit omnis qui repudiandae. Cum sit provident eligendi tenetur facere ut quo. Commodi voluptate ut aut deleniti.",
+            "tags": [
+                "organization",
+                "planning",
+                "collaboration",
+                "writing",
+                "calendar"
+            ]
+        }
+    ]
+
   07.3 Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da tag que deseja filtrar
- 
+
+    + Request
     GET {url-da-aplicacao}/api/posts/{tag}
+
+     + Response 200 (application/json)
+    [
+        {
+            "id": 1,
+            "title": "Notion",
+            "author": "Marcia Thiel",
+            "content": "Sed soluta nemo et consectetur reprehenderit ea reprehenderit sit. Aut voluptate sit omnis qui repudiandae. Cum sit provident eligendi tenetur facere ut quo. Commodi voluptate ut aut deleniti.",
+            "tags": [
+                "organization",
+                "planning",
+                "collaboration",
+                "writing",
+                "calendar"
+            ]
+        }
+    ]
+    
 
   07.4 Cadastra um novo post, exemplo de informações:
      
@@ -84,7 +169,24 @@ A url da aplicação será
         "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
     }
 
-  07.5 Altera as informções do post com id informado no parâmetro passado na url
+    + Response 201 (application/json)
+    {
+        "title": "hotel",
+        "author": "Jett Hilpert",
+        "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
+        "tags": [
+            "node",
+            "organizing",
+            "webapps",
+            "domain",
+            "developer",
+            "https",
+            "proxy"
+        ],
+        "id": 4
+    }
+
+  07.5 Altera as informções do post com {id} informado no parâmetro passado na url, na requisição pose ser passados todos os parametros ou apenas os que deseja alterar
         
     + Request (application/json)
     PUT {url-da-aplicacao}/api/posts/{id}
@@ -95,9 +197,31 @@ A url da aplicação será
         "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
     }
 
+    {
+        "title": "hotel",
+    }
+
+    + Response 200 (application/json)
+    {
+        "id": 1,
+        "title": "hotel",
+        "author": "Jett Hilpert",
+        "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
+        "tags": [
+            "node",
+            "organizing",
+            "webapps",
+            "domain",
+            "developer",
+            "https",
+            "proxy"
+        ]
+    }
+
   07.6  Exclui o post referente ao id informado como parâmetro da url
-  
+
+    + Request
     DELETE {url-da-aplicacao}/api/posts/{id}
     
-     
+    + Response 204
 
