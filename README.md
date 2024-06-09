@@ -97,6 +97,7 @@ A API irá retornar um token a ser utilizado nas requisições para os demais en
 ## Requisições
 
 ### GET /api/posts
+Retorna todos os posts.
     
     + Request
     HEADER Authorization: Bearer {token}
@@ -149,7 +150,8 @@ A API irá retornar um token a ser utilizado nas requisições para os demais en
         }
     ]
 
-  03.2 - Retorna todos os posts que possuam a tag passada na URL
+  ### GET /api/posts?tag=planning 
+  Retorna todos os posts que possuam a {tag} passada na URL, no exemplo acima, o nome da {tag} é 'planning'.
 
     + Request
     HEADER Authorization: Bearer {token}
@@ -172,7 +174,9 @@ A API irá retornar um token a ser utilizado nas requisições para os demais en
         }
     ]
 
-  03.3 Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da tag que deseja filtrar
+  ### GET /api/posts/writing
+  Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da {tag} que deseja filtrar. <br />
+  Retorna todos os posts que possuam a {tag} passada na URL, no exemplo acima, o nome da {tag} é 'writing'.
 
     + Request
     HEADER Authorization: Bearer {token}
@@ -196,7 +200,14 @@ A API irá retornar um token a ser utilizado nas requisições para os demais en
     ]
     
 
-  03.4 Cadastrar um novo post:
+  ### POST /api/posts
+  Cadastrar um novo post.<br />
+  
+  Deve ser enviado um JSON com os seguintes atributos: <br />
+    * title: required, string <br />
+    * author: required, string <br />
+    * content: required, string <br />
+    * tags: required, array string
      
      + Request (application/json)
      HEADER Authorization: Bearer {token}
@@ -225,7 +236,14 @@ A API irá retornar um token a ser utilizado nas requisições para os demais en
         "id": 4
     }
 
-  03.5 Altera as informções do post com {id} informado no parâmetro passado na url, na requisição pode ser passados todos os parametros ou apenas os que deseja alterar
+  ### PUT /api/posts/{id} 
+  Altera as informções do post com {id} informado no parâmetro passado na URL. <br />
+  
+  Na requisição pode ser passados todos os parametros ou apenas os que deseja alterar. <br />
+    * title: string <br />
+    * author: string <br />
+    * content: string <br />
+    * tags: array string <br />
         
     + Request (application/json)
     HEADER Authorization: Bearer {token}
@@ -258,7 +276,8 @@ A API irá retornar um token a ser utilizado nas requisições para os demais en
         ]
     }
 
-  03.6  Exclui o post referente ao id informado como parâmetro da url
+  ### DELETE /api/posts/{id}  
+  Exclui o post referente ao {id} informado como parâmetro da URL.
 
     + Request
     HEADER Authorization: Bearer {token}
