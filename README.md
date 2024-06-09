@@ -9,10 +9,10 @@ Desenvolvido por <b>Jose de Barros Campelo Neto</b> <br />
 
 ## Requisitos para utilização
 
-    * Servidor Apache <br />
-    * MySql  <br />
-    * PHP ^8.1 <br />
-    * Laravel ^10.10 
+* Servidor Apache <br />
+* MySql  <br />
+* PHP ^8.1 <br />
+* Laravel ^10.10 
 
 ## Configuração de ambiente
 
