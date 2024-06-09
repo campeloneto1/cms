@@ -7,15 +7,16 @@ Desenvolvido por <b>Jose de Barros Campelo Neto</b> <br />
 <a href="https://linkedin.com/in/campeloneto1" target="_blank">LinkedIn</a>
 <a href="https://github.com/campeloneto1" target="_blank">GitHub</a>
 
-## Configuração de ambiente
+## Requisitos para utilização
 
-Para configurar o ambiente serão necessários alguns passos:
-
-Requisitos para utilização: <br />
     * Servidor Apache <br />
     * MySql  <br />
     * PHP ^8.1 <br />
     * Laravel ^10.10 
+
+## Configuração de ambiente
+
+Para configurar o ambiente serão necessários alguns passos:
 
 01 Clone o repositório no seu ambiente de desenvolvimento
 
