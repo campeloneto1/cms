@@ -20,9 +20,7 @@ Para configurar o ambiente serão necessários alguns passos:
 
 01 Clone o repositório no seu ambiente de desenvolvimento
 
-    ```
     git clone https://github.com/campeloneto1/cms.git
-    ```
 
 02 Execute os comandos:
 
