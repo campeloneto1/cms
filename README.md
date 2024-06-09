@@ -60,9 +60,11 @@ Caso não tenha um servidor apache, execute o comando a seguir
 A url da aplicação será 
     
     http://localhost:8000
-    
 
-06 A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login. <br />
+    
+## Requisições
+
+01 A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login. <br />
 Estão diponíveis três usuários: <br /><br />
     cpf: 11111111111, senha: 123456 <br />
     cpf: 22222222222, senha: 123456 <br />
@@ -90,10 +92,10 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         }
     }
 
-07 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
+02 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
 
-08 Foram criados end-points nas rotas <br />
-  08.1 - Retorna todos os postos
+03 Foram criados end-points nas rotas <br />
+  03.1 - Retorna todos os postos
     
     + Request
     HEADER Authorization: Bearer {token}
@@ -146,7 +148,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         }
     ]
 
-  08.2 - Retorna todos os posts que possuam a tag passada na URL
+  03.2 - Retorna todos os posts que possuam a tag passada na URL
 
     + Request
     HEADER Authorization: Bearer {token}
@@ -169,7 +171,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         }
     ]
 
-  08.3 Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da tag que deseja filtrar
+  03.3 Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da tag que deseja filtrar
 
     + Request
     HEADER Authorization: Bearer {token}
@@ -193,7 +195,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
     ]
     
 
-  08.4 Cadastrar um novo post:
+  03.4 Cadastrar um novo post:
      
      + Request (application/json)
      HEADER Authorization: Bearer {token}
@@ -222,7 +224,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         "id": 4
     }
 
-  08.5 Altera as informções do post com {id} informado no parâmetro passado na url, na requisição pode ser passados todos os parametros ou apenas os que deseja alterar
+  03.5 Altera as informções do post com {id} informado no parâmetro passado na url, na requisição pode ser passados todos os parametros ou apenas os que deseja alterar
         
     + Request (application/json)
     HEADER Authorization: Bearer {token}
@@ -255,7 +257,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         ]
     }
 
-  08.6  Exclui o post referente ao id informado como parâmetro da url
+  03.6  Exclui o post referente ao id informado como parâmetro da url
 
     + Request
     HEADER Authorization: Bearer {token}
