@@ -51,6 +51,7 @@ A url da aplicação será
 
 05 A aplicação possui proteção de rotas, então é necessário realizar o login com as credencias:
 
+    + Request (application/json)
     POST {url-da-aplicacao}/api/login
     {
         'cpf': '11111111111',
@@ -74,6 +75,7 @@ A url da aplicação será
 
   07.4 Cadastra um novo post, exemplo de informações:
      
+     + Request (application/json)
      POST {url-da-aplicacao}/api/posts
      {
         "title": "hotel",
@@ -84,6 +86,7 @@ A url da aplicação será
 
   07.5 Altera as informções do post com id informado no parâmetro passado na url
         
+    + Request (application/json)
     PUT {url-da-aplicacao}/api/posts/{id}
     {
         "title": "hotel",
