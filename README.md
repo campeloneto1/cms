@@ -53,6 +53,12 @@ A url da aplicação será
     
 
 05 A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login:
+Estão diponíveis três usuários: <br /><br />
+    cpf: 11111111111, senha: 123456 <br />
+    cpf: 22222222222, senha: 123456 <br />
+    cpf: 33333333333, senha: 123456 <br />
+
+Observação: sempre que realizer login com um usuário, todas as outras sessões do usuário serão desativadas.    
 
     + Request (application/json)
     POST {url-da-aplicacao}/api/login
