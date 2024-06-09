@@ -49,7 +49,7 @@ Para configurar o ambiente serão necessários alguns passos:
     php artisan migrate:fresh --seed
     php artisan passport:install
 
-Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte url com os end-points informados no item 06
+Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte url com os end-points disponíveis na seção Requisições
 
     http://localhost/cms/public
 
