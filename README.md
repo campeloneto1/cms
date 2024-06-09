@@ -2,28 +2,35 @@
 
 ## API CMS
 
-Api criada em Laravel para o desafio Tech Plantão Ativo, 
+Api criada em <a href="https://laravel.com" target="_blank">Laravel</aL para o desafio Tech Plantão Ativo, 
 
 ## Configuração de ambiente
 
 Para configurar o ambiente serão necessários alguns passos:
+
+Requisitos para utilização:
+    . Servidor Apache
+    . MySql 
+    . PHP 8.1
+    . Laravel 10
 
 
 01 Clone o repositório no seu ambiente de desenvolvimento
 
     git clone https://github.com/campeloneto1/cms.git
 
-02 Execute o comando:
+02 Execute os comandos:
 
+    cd cmd/
     composer install
 
 03 Altere o nome do arquivo .env.example para .env e informe os seguintes dados:
 
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=laravel
-    DB_USERNAME=root
-    DB_PASSWORD=
+    DB_HOST=127.0.0.1      #endereço do bd
+    DB_PORT=3306           #porta utilizada pelo bd
+    DB_DATABASE=laravel    #nome do banco de dados
+    DB_USERNAME=root       #usuário com permições para alterações no banco informado
+    DB_PASSWORD=           #senha do usuário
 
 04 Abra o terminal na pasta da aplicação e execute os seguintes comandos:
 
