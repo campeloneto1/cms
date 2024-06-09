@@ -58,6 +58,19 @@ A url da aplicação será
         'password': '123456'
     }
 
+    + Response 200 (application/json)
+    {
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmM0MjMwYTczMjRiMmYwZjEzYzE5MTc3NmE4MWZhNTI5Yzk4Y2Y2ZDhkNmY2ODVmMTE0YzJiNjQxOThlMDNhYmMxMzI0ZTdlNmE3NTdjNTciLCJpYXQiOjE3MTc5Mzg5NjkuNDY1MzE4LCJuYmYiOjE3MTc5Mzg5NjkuNDY1MzIzLCJleHAiOjE3NDk0NzQ5NjkuNDYxMzkxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.zSCBd7f1NYEoCqDzuIab04UTVkk0Yvy4YvnSaB-PezxkKD8quWXrLh7MllScM1eHIxsQV5o617LhmLDNIIlgsgX3GAVCa_SUFtYMyZeKvQ5K6Jy9I_TmGkiR9ZrJ5CktNZWlJNgWIJgDXVIVjWAPSPMBiL9k2PXBVODOxJB9TLuvPUzKUqf3x0N1vNu1hHGOvcYV4M8h8Vbe0x86XEswz3xeNqhf-feI-V1lUZxN6MaZyPd7jd1hiO-BOpzkpHs2lZ3iaw4fww2gpFQ1429LwiAjIiQZKpxqskSwtNoYvP3eqYnowAU9PzFQ8ksASRpxsd7vLnOaM2bMgmYZLxYMiu37oha-BbDquMp0nu3WdYs6yad5mGHoViQJQBQcauOk4JwYJ-uaJzJ4tvT4OwdhS6-TFevWBO0eXIvwuvkYCQy78Nucp5KiO1hi2vsZU9ajM9PAFGcaLHETg1V26s6DaoAw2wxYyOg7CdVp74jxR2qYXcwcuKO4D8zjLOVrvHmVfbI2iYheXlZO24kocFxjb3O34refw2YdQWwRjvNrqSBzrkPtmUCekBBDVhMIshJOBn8NIuYy8hPH4RimYLpjg2bRrpcIsoc1s1cHEAWFCXWG0J8hlFThy6-EC5i5chBi9EX0Dt5Tz39KPJtYNXIN0poHggxScEJ-cWG-Opyr2tw",
+        "user": {
+            "id": 1,
+            "nome": "Usuario Teste",
+            "cpf": "11111111111",
+            "email_verified_at": null,
+            "created_at": null,
+            "updated_at": null
+        }
+    }
+
 06 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
 
 07 Foram criados end-points nas rotas <br />
@@ -158,7 +171,7 @@ A url da aplicação será
     ]
     
 
-  07.4 Cadastra um novo post, exemplo de informações:
+  07.4 Cadastrar um novo post:
      
      + Request (application/json)
      POST {url-da-aplicacao}/api/posts
@@ -186,7 +199,7 @@ A url da aplicação será
         "id": 4
     }
 
-  07.5 Altera as informções do post com {id} informado no parâmetro passado na url, na requisição pose ser passados todos os parametros ou apenas os que deseja alterar
+  07.5 Altera as informções do post com {id} informado no parâmetro passado na url, na requisição pode ser passados todos os parametros ou apenas os que deseja alterar
         
     + Request (application/json)
     PUT {url-da-aplicacao}/api/posts/{id}
