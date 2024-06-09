@@ -7,6 +7,14 @@ Desenvolvido por <b>Jose de Barros Campelo Neto</b> <br />
 <a href="https://linkedin.com/in/campeloneto1" target="_blank">LinkedIn</a>
 <a href="https://github.com/campeloneto1" target="_blank">GitHub</a>
 
+## API hospedada na AWS
+
+    http://18.231.246.233/cms/public/
+
+Utilizar end-points disponíveis nas seções <b>Autenticação</b> e <b>Requisições</b>
+
+## Instalação local
+
 ## Requisitos para utilização
 
 * Servidor Apache <br />
