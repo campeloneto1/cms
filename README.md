@@ -26,21 +26,29 @@ Requisitos para utilização: <br />
     cd cmd/
     composer install
 
-03 Altere o nome do arquivo .env.example para .env e informe os seguintes dados referente a conexão com o MySql:
+03 Crie um banco de dados no Mysql
 
-    DB_HOST=127.0.0.1      #endereço IP do bd
-    DB_PORT=3306           #porta utilizada pelo bd
-    DB_DATABASE=laravel    #nome do banco de dados
-    DB_USERNAME=root       #usuário com permições para alterações no banco informado
-    DB_PASSWORD=           #senha do usuário
+    mysql -u root -p;
+    #informe a senha do usuário root
+    CREATE DATABASE cms;
+    CREATE USER 'cms'@'localhost' IDENTIFIED BY '123456'; 
+    GRANT ALL PRIVILEGES ON cms. * TO 'cms'@'localhost'; 
 
-04 Abra o terminal na pasta da aplicação e execute os seguintes comandos:
+04 Altere o nome do arquivo .env.example para .env e informe os seguintes dados referente a conexão com o MySql:
+
+    DB_HOST=127.0.0.1     #endereço IP do bd
+    DB_PORT=3306          #porta utilizada pelo bd
+    DB_DATABASE=cms       #nome do banco de dados
+    DB_USERNAME=cms       #usuário com permições para alterações no banco informado
+    DB_PASSWORD=123456    #senha do usuário
+
+05 Abra o terminal na pasta da aplicação e execute os seguintes comandos:
 
     php artisan key:generate
     php artisan migrate:fresh --seed
     php artisan passport:install
 
-Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte url com os end-points informados no item 05
+Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte url com os end-points informados no item 06
 
     http://localhost/cms/public
 
@@ -53,7 +61,7 @@ A url da aplicação será
     http://localhost:8000
     
 
-05 A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login:
+06 A aplicação utiliza Laravel Passport, para proteção de end-points e autenticação de usuários, para isso, se faz necessário realizar uma requisição de login. <br />
 Estão diponíveis três usuários: <br /><br />
     cpf: 11111111111, senha: 123456 <br />
     cpf: 22222222222, senha: 123456 <br />
@@ -81,10 +89,10 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         }
     }
 
-06 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
+07 A API irá retornar um token a ser utilizado nas requisições para os demais end-poins, o token deve ser do tipo Authorization Bearer Token
 
-07 Foram criados end-points nas rotas <br />
-  07.1 - Retorna todos os postos
+08 Foram criados end-points nas rotas <br />
+  08.1 - Retorna todos os postos
     
     + Request
     HEADER Authorization: Bearer {token}
@@ -137,7 +145,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         }
     ]
 
-  07.2 - Retorna todos os posts que possuam a tag passada na URL
+  08.2 - Retorna todos os posts que possuam a tag passada na URL
 
     + Request
     HEADER Authorization: Bearer {token}
@@ -160,7 +168,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         }
     ]
 
-  07.3 Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da tag que deseja filtrar
+  08.3 Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da tag que deseja filtrar
 
     + Request
     HEADER Authorization: Bearer {token}
@@ -184,7 +192,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
     ]
     
 
-  07.4 Cadastrar um novo post:
+  08.4 Cadastrar um novo post:
      
      + Request (application/json)
      HEADER Authorization: Bearer {token}
@@ -213,7 +221,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         "id": 4
     }
 
-  07.5 Altera as informções do post com {id} informado no parâmetro passado na url, na requisição pode ser passados todos os parametros ou apenas os que deseja alterar
+  08.5 Altera as informções do post com {id} informado no parâmetro passado na url, na requisição pode ser passados todos os parametros ou apenas os que deseja alterar
         
     + Request (application/json)
     HEADER Authorization: Bearer {token}
@@ -246,7 +254,7 @@ Observação: sempre que realizer login com um usuário, todas as outras sessõe
         ]
     }
 
-  07.6  Exclui o post referente ao id informado como parâmetro da url
+  08.6  Exclui o post referente ao id informado como parâmetro da url
 
     + Request
     HEADER Authorization: Bearer {token}
