@@ -22,9 +22,13 @@ Para configurar o ambiente serão necessários alguns passos:
 
     git clone https://github.com/campeloneto1/cms.git
 
+Observação: Se estiver utilizando linux, talvez seja necessário alterar as permisões de pastas e arquivos com o comando:
+    
+    sudo chmod 775 -R cms/   
+
 02 Execute os comandos:
 
-    cd cmd/
+    cd cms/
     composer install
 
 03 Crie um banco de dados no Mysql
@@ -32,7 +36,7 @@ Para configurar o ambiente serão necessários alguns passos:
     mysql -u root -p;
     #informe a senha do usuário root
     CREATE DATABASE cms;
-    CREATE USER 'cms'@'localhost' IDENTIFIED BY '123456'; 
+    CREATE USER 'cms'@'localhost' IDENTIFIED BY 'Cms123456!'; 
     GRANT ALL PRIVILEGES ON cms . * TO 'cms'@'localhost'; 
 
 04 Altere o nome do arquivo .env.example para .env e informe os seguintes dados referente a conexão com o MySql:
@@ -41,7 +45,7 @@ Para configurar o ambiente serão necessários alguns passos:
     DB_PORT=3306          #porta utilizada pelo bd
     DB_DATABASE=cms       #nome do banco de dados
     DB_USERNAME=cms       #usuário com permições para alterações no banco informado
-    DB_PASSWORD=123456    #senha do usuário
+    DB_PASSWORD=Cms123456!    #senha do usuário
 
 05 Abra o terminal na pasta da aplicação e execute os seguintes comandos:
 
@@ -49,7 +53,7 @@ Para configurar o ambiente serão necessários alguns passos:
     php artisan migrate:fresh --seed
     php artisan passport:install
 
-Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte url com os end-points disponíveis na seção Requisições
+Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte URL com os end-points disponíveis na seção Requisições
 
     http://localhost/cms/public
 
@@ -57,7 +61,7 @@ Caso não tenha um servidor apache, execute o comando a seguir
     
     php artisan serve
 
-A url da aplicação será 
+A URL da aplicação será 
     
     http://localhost:8000
 
@@ -74,6 +78,10 @@ Observação 01: Sempre que realizer login com um usuário, todas as outras sess
 
 Observação 02: Foi estabelecido um limite de 5 requisições por minuto no end-point /api/login, para evitar ataques de força bruta.   
 
+     + Attributes
+         + cpf (string, required)
+         + password (string, required)
+    
     + Request (application/json)
     POST {url-da-aplicacao}/api/login
     {
@@ -97,9 +105,11 @@ A API irá retornar um token a ser utilizado nas requisições para os demais en
 
 ### GET /api/posts
 Retorna todos os posts.
+
+     + Headers
+         Authorization: Bearer {token}
     
     + Request
-    HEADER Authorization: Bearer {token}
     GET {url-da-aplicacao}/api/posts
 
     + Response 200 (application/json)
@@ -152,8 +162,10 @@ Retorna todos os posts.
   ### GET /api/posts?tag=planning 
   Retorna todos os posts que possuam a {tag} passada na URL, no exemplo acima, o nome da {tag} é 'planning'.
 
+     + Headers
+         Authorization: Bearer {token}
+
     + Request
-    HEADER Authorization: Bearer {token}
     GET {url-da-aplicacao}/api/posts?tag={tag}
 
     + Response 200 (application/json)
@@ -177,8 +189,10 @@ Retorna todos os posts.
   Para utilização de uma URL mais amigável, basta colocar uma '/' após o endpoint 'posts' e informar o nome da {tag} que deseja filtrar. <br />
   Retorna todos os posts que possuam a {tag} passada na URL, no exemplo acima, o nome da {tag} é 'writing'.
 
+     + Headers
+         Authorization: Bearer {token}
+
     + Request
-    HEADER Authorization: Bearer {token}
     GET {url-da-aplicacao}/api/posts/{tag}
 
      + Response 200 (application/json)
@@ -201,15 +215,17 @@ Retorna todos os posts.
 
   ### POST /api/posts
   Cadastrar um novo post.<br />
-  
-  Deve ser enviado um JSON com os seguintes atributos: <br />
-    * title: required, string <br />
-    * author: required, string <br />
-    * content: required, string <br />
-    * tags: required, array string
+
+    + Headers
+         Authorization: Bearer {token}
+         
+     + Attributes
+         + title (string, required)
+         + author (string, required)
+         + content (string, required)
+         + tags (array, required)
      
      + Request (application/json)
-     HEADER Authorization: Bearer {token}
      POST {url-da-aplicacao}/api/posts
      {
         "title": "hotel",
@@ -239,13 +255,17 @@ Retorna todos os posts.
   Altera as informções do post com {id} informado no parâmetro passado na URL. <br />
   
   Na requisição pode ser passados todos os parametros ou apenas os que deseja alterar. <br />
-    * title: string <br />
-    * author: string <br />
-    * content: string <br />
-    * tags: array string <br />
+
+    + Headers
+         Authorization: Bearer {token}
+
+     + Attributes
+         + title (string, optional)
+         + author (string, optional)
+         + content (string, optional)
+         + tags (array, optional)
         
     + Request (application/json)
-    HEADER Authorization: Bearer {token}
     PUT {url-da-aplicacao}/api/posts/{id}
     {
         "title": "hotel",
@@ -278,8 +298,10 @@ Retorna todos os posts.
   ### DELETE /api/posts/{id}  
   Exclui o post referente ao {id} informado como parâmetro da URL.
 
+    + Headers
+         Authorization: Bearer {token}
+
     + Request
-    HEADER Authorization: Bearer {token}
     DELETE {url-da-aplicacao}/api/posts/{id}
     
     + Response 204
