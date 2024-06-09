@@ -2,17 +2,17 @@
 
 # API CMS
 
-Api criada em <a href="https://laravel.com" target="_blank">Laravel</aL para o desafio Tech Plantão Ativo, 
+Api criada em <a href="https://laravel.com" target="_blank">Laravel</a> para o desafio Tech Plantão Ativo, 
 
 ## Configuração de ambiente
 
 Para configurar o ambiente serão necessários alguns passos:
 
 Requisitos para utilização:
-    * Servidor Apache
-    * MySql 
-    * PHP 8.1
-    * Laravel 10
+    + Servidor Apache
+    + MySql 
+    + PHP 8.1
+    + Laravel 10
 
 01 Clone o repositório no seu ambiente de desenvolvimento
 
