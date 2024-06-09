@@ -25,7 +25,7 @@ class PostController extends Controller
         $data->title = $request->title;
         $data->author = $request->author;
         $data->content = $request->content;
-        $data->tags = json_encode($request->tags); 
+        $data->tags = $request->tags; 
 
         $data->save();
 
@@ -35,18 +35,9 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show($post)
     {
-        return Post::whereRaw('FIND_IN_SET(?, tags)', [$tag])->orderBy('id')->get();
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function filter($tag)
-    {
-        return true;
-        return Post::whereRaw('FIND_IN_SET(?, tags)', [$tag])->orderBy('id')->get();
+        return Post::whereJsonContains('tags', $post)->orderBy('id')->get();
     }
 
     /**
@@ -58,7 +49,7 @@ class PostController extends Controller
          $post->title = $request->title;
         $post->author = $request->author;
         $post->content = $request->content;
-        $post->tags = json_encode($request->tags); 
+        $post->tags = $request->tags; 
 
        $post->save();
 

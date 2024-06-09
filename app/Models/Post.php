@@ -34,4 +34,8 @@ class Post extends Model
      * @var string
      */
     protected $primaryKey = 'id';
+
+    protected $casts = [
+        'tags' => 'array',
+    ];
 }

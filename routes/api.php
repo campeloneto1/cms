@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('posts/{tag}', [PostController::class, 'filter']);  
+ 
 Route::apiResource('posts', PostController::class);  
