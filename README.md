@@ -86,6 +86,8 @@ Observação 01: Sempre que realizer login com um usuário, todas as outras sess
 
 Observação 02: Foi estabelecido um limite de 5 requisições por minuto no end-point /api/login, para evitar ataques de força bruta.   
 
+### POST /api/login
+
     + Attributes
          + cpf (string, required)
          + password (string, required)
