@@ -70,31 +70,31 @@ A url da aplicação será
 
   07.3 Para utilização de uma URL mais amigável, basta colocar uma "/" após o endpoint posts e informar o nome da tag que deseja filtrar
  
-     GET {url-da-aplicacao}/api/posts/{tag}
+    GET {url-da-aplicacao}/api/posts/{tag}
 
   07.4 Cadastra um novo post, exemplo de informações:
      
      POST {url-da-aplicacao}/api/posts
-         {
-            "title": "hotel",
-            "author": "Jett Hilpert",
-            "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
-            "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
-        }
+     {
+        "title": "hotel",
+        "author": "Jett Hilpert",
+        "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
+        "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
+    }
 
   07.5 Altera as informções do post com id informado no parâmetro passado na url
         
-      PUT {url-da-aplicacao}/api/posts/{id}
-          {
-            "title": "hotel",
-            "author": "Jett Hilpert",
-            "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
-            "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
-        }
+    PUT {url-da-aplicacao}/api/posts/{id}
+    {
+        "title": "hotel",
+        "author": "Jett Hilpert",
+        "content": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
+        "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
+    }
 
   07.6  Exclui o post referente ao id informado como parâmetro da url
   
-      DELETE {url-da-aplicacao}/api/posts/{id}
+    DELETE {url-da-aplicacao}/api/posts/{id}
     
      
 
