@@ -70,7 +70,9 @@ Estão diponíveis três usuários: <br /><br />
     cpf: 22222222222, senha: 123456 <br />
     cpf: 33333333333, senha: 123456 <br />
 
-Observação: sempre que realizer login com um usuário, todas as outras sessões do usuário serão desativadas.    
+Observação: Sempre que realizer login com um usuário, todas as outras sessões do usuário serão desativadas.    
+
+Observação2: Foi estabelecido um limite de 5 requisições por minuto no end-point /login, para evitar ataques de força bruta.   
 
     + Request (application/json)
     POST {url-da-aplicacao}/api/login
