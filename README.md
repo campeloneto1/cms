@@ -24,7 +24,7 @@ Endereço do servidor:
 ### Configuração de ambiente
 
 
-    Para configurar o ambiente serão necessários alguns passos:
+Para configurar o ambiente serão necessários alguns passos:
 
 * Clone o repositório no seu ambiente de desenvolvimento
 
