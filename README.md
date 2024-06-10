@@ -24,13 +24,13 @@ https://cms89.docs.apiary.io/
 
 #### Execute os seguintes comandos na pasta 
     
-    Clone o repositório no seu ambiente de desenvolvimento e execute os comandos a seguir
+Clone o repositório no seu ambiente de desenvolvimento e execute os comandos a seguir
     
         git clone https://github.com/campeloneto1/cms.git
         cs cms/
         docker-compose up
 
-    A URL da aplicação será 
+A URL da aplicação será 
     
         http://localhost:8080/public
 
