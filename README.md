@@ -20,47 +20,63 @@ https://cms89.docs.apiary.io/
 #### Requisitos para utilização
 
 * Docker
-* Docker Composer
+* Docker Compose
+* Composer
 
-#### Execute os seguintes comandos na pasta 
+#### Configuração do ambiente 
+Para configurar o ambiente serão necessários alguns passos:
     
-Clone o repositório no seu ambiente de desenvolvimento e execute os comandos a seguir
+* Clone o repositório no seu ambiente de desenvolvimento e execute os comandos a seguir
     
         git clone https://github.com/campeloneto1/cms.git
-        cs cms/
+        
+*   Execute os comandos:
+
+        cd cms/
+        composer install
+
+* Se estiver usando linux, execute o seguinte comando
+    
+        sudo chmod 775 -R cms/
+    
+* Execute o comando para subir o container
+
         docker-compose up
 
-A URL da aplicação será 
+* A URL da aplicação será 
     
-        http://localhost:8080/public
+    http://localhost:8080/public
 
-    
-# Instalação local    
+#Instalação manual    
 
-### Requisitos para utilização
+#### Requisitos para utilização
 
 * Servidor Apache
 * MySql
 * PHP ^8.1
 * Laravel ^10.10
+* Composer
 
-### Configuração de ambiente
+#### Configuração de ambiente
 
 
-Para configurar o ambiente serão necessários alguns passos:
+    Para configurar o ambiente serão necessários alguns passos:
 
 * Clone o repositório no seu ambiente de desenvolvimento
 
         git clone https://github.com/campeloneto1/cms.git
 
-    Observação: Se estiver utilizando linux, talvez seja necessário alterar as permisões de pastas e arquivos com o comando:
-
-        sudo chmod 775 -R cms/
         
 * Execute os comandos:
 
         cd cms/
         composer install
+        
+
+* Se estiver utilizando linux, execute o seguinte comando:
+    
+        sudo chmod 775 -R cms/ 
+
         
 * Crie um banco de dados no Mysql
 
@@ -84,17 +100,20 @@ Para configurar o ambiente serão necessários alguns passos:
         php artisan migrate:fresh --seed
         php artisan passport:install
         
-    Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte URL com os end-points disponíveis na seção Requisições
+        
 
-        http://localhost/cms/public
+* Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte URL com os end-points disponíveis na seção Requisições
 
-    Caso não tenha um servidor apache, execute o comando a seguir
+    http://localhost/cms/public
+
+* Caso não tenha um servidor apache, execute o comando a seguir
 
         php artisan serve
-        
-    A URL da aplicação será 
+
     
-        http://localhost:8000
+* A URL da aplicação será 
+    
+    http://localhost:8000
 
 # Autenticação [/api/login]
 
