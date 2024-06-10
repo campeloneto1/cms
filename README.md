@@ -109,6 +109,8 @@ Observação 03: A API irá retornar um token a ser utilizado nas requisições 
 
     + Attributes (ReturnLogin)    
 
+# Group Posts 
+
 # Listar e Cadastrar [/api/posts]
 
 ## Listar posts [GET]
@@ -125,7 +127,7 @@ Retorna todos os posts.
     + Attributes (array[Return])
     
 
-## Criar post [POST]
+## Cadastrar post [POST]
 
 Cadastrar um novo post.
 
@@ -264,7 +266,7 @@ Retorna todos os posts que possuam a {tag} passada na URL.
     + id: 1 (number) - Id do post.
 
 
-## Alterar post [PUT]
+## Editar post [PUT]
 Altera as informções do post com {id} informado no parâmetro passado na URL.
 
 Na requisição pode ser passados todos os parametros ou apenas os que deseja alterar.
