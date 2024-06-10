@@ -9,8 +9,7 @@ Desenvolvido por <b>Jose de Barros Campelo Neto</b> <br />
 
 # API hospedada na AWS
 
-Endereço do servidor: 
-    http://18.231.246.233/cms/public
+http://18.231.246.233/cms/public
 
 # Blueprint da Api
 
@@ -109,7 +108,7 @@ Observação 03: A API irá retornar um token a ser utilizado nas requisições 
 
     + Attributes (ReturnLogin)    
 
-# Group Posts 
+# Posts 
 
 # Listar e Cadastrar [/api/posts]
 
