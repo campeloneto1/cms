@@ -15,6 +15,25 @@ http://18.231.246.233/cms/public
 
 https://cms89.docs.apiary.io/
 
+# Instalação usando Docker
+
+#### Requisitos para utilização
+
+* Docker
+* Docker Composer
+
+#### Execute os seguintes comandos na pasta 
+    
+    Clone o repositório no seu ambiente de desenvolvimento e execute os comandos a seguir
+    
+        git clone https://github.com/campeloneto1/cms.git
+        cs cms/
+        docker-compose up
+
+A URL da aplicação será 
+    
+    <code>http://localhost:8080/public</code>
+
     
 # Instalação local    
 
@@ -67,7 +86,7 @@ Para configurar o ambiente serão necessários alguns passos:
         
     Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte URL com os end-points disponíveis na seção Requisições
 
-        http://localhost/cms/public
+    <code>http://localhost/cms/public</code>
 
     Caso não tenha um servidor apache, execute o comando a seguir
 
@@ -75,7 +94,7 @@ Para configurar o ambiente serão necessários alguns passos:
         
     A URL da aplicação será 
     
-        http://localhost:8000
+    <code>http://localhost:8000</code>
 
 # Autenticação [/api/login]
 
