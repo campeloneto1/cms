@@ -67,12 +67,6 @@ Para configurar o ambiente serão necessários alguns passos:
         cd cms/
         composer install
         
-
-* Se estiver utilizando linux, execute o seguinte comando:
-    
-        sudo chmod 775 -R cms/ 
-
-        
 * Crie um banco de dados no Mysql
 
         mysql -u root -p;
@@ -95,7 +89,9 @@ Para configurar o ambiente serão necessários alguns passos:
         php artisan migrate:fresh --seed
         php artisan passport:install
         
-        
+* Se estiver utilizando linux, execute o seguinte comando:
+    
+        sudo chmod 775 -R cms/         
 
 * Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte URL com os end-points disponíveis na seção Requisições
 
