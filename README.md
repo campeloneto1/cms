@@ -34,10 +34,6 @@ Para configurar o ambiente serão necessários alguns passos:
 
         cd cms/
         composer install
-
-* Se estiver usando linux, execute o seguinte comando
-    
-        sudo chmod 775 -R cms/
     
 * Execute o comando para subir o container
 
