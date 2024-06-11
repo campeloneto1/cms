@@ -42,6 +42,8 @@ Para configurar o ambiente serão necessários alguns passos:
 * A URL da aplicação será 
     
     http://localhost:8080/public
+  
+Observação: Caso queira alterar a porta em que a aplicação está rodando, é necessário alterar o arquivo 'docker-compose.yml', por pardão ela etá configurada para 8080.
 
 #Instalação manual    
 
