@@ -27,7 +27,7 @@ services:
       - .:/var/www/html
       - ./.env.example:/var/www/html/.env
       - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
-    command: bash -c "apt-get update && docker-php-ext-install mysqli && docker-php-ext-install pdo_mysql && php artisan key:generate && php artisan migrate:fresh --seed && php artisan passport:install && chmod -R . && a2enmod rewrite && service apache2 restart && tail -f /dev/null"
+    command: bash -c "apt-get update && docker-php-ext-install mysqli && docker-php-ext-install pdo_mysql && php artisan key:generate && php artisan migrate:fresh --seed && php artisan passport:install && chmod -R ../html && a2enmod rewrite && service apache2 restart && tail -f /dev/null"
     ports:
       - "8080:80"
     expose:
