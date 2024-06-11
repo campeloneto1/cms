@@ -91,7 +91,7 @@ Para configurar o ambiente serão necessários alguns passos:
         
 * Se estiver utilizando linux, execute o seguinte comando:
     
-        sudo chmod 775 -R cms/         
+        sudo chmod 777 -R cms/         
 
 * Se a aplicação for hospedada em um servidor apache (No Ubuntu, fica na pasta '/var/www/html'), basta utilizar a seguinte URL com os end-points disponíveis na seção Requisições
 
