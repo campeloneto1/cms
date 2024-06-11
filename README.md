@@ -45,7 +45,7 @@ Para configurar o ambiente serão necessários alguns passos:
   
 Observação: Caso queira alterar a porta em que a aplicação está rodando, é necessário alterar o arquivo 'docker-compose.yml', por pardão ela etá configurada para 8080.
 
-#Instalação manual    
+# Instalação manual    
 
 #### Requisitos para utilização
 
