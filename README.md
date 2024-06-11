@@ -50,7 +50,6 @@ Para configurar o ambiente serão necessários alguns passos:
 * Servidor Apache
 * MySql
 * PHP ^8.1
-* Laravel ^10.10
 * Composer
 
 #### Configuração de ambiente
